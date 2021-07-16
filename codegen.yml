@@ -1,0 +1,9 @@
+# HasuraのURLに対してinspectした結果
+schema: schema.graphql
+documents: ./src/**/*.graphql
+generates:
+  ./src/generated/graphqlOperations.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typed-document-node
