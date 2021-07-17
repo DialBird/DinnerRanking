@@ -1,6 +1,6 @@
 # HasuraのURLに対してinspectした結果
 schema: schema.graphql
-documents: ./src/**/*.graphql
+documents: ./src/**/*.{graphql,gql}
 generates:
   ./src/generated/graphqlOperations.ts:
     plugins:
