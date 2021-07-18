@@ -11,8 +11,7 @@ import gql from 'graphql-tag'
 
 export default defineComponent({
   name: "HaiPage",
-  setup(_, ctx) {
-  },
+  setup() {},
   apollo: {
     supers: gql`
       query getSupers {
