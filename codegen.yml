@@ -1,5 +1,6 @@
-# HasuraのURLに対してinspectした結果
-schema: schema.graphql
+schema:
+  https://dinner-ranking.hasura.app/v1/graphql:
+    headers: { 'X-Hasura-Admin-Secret': ${HASURA_SECRET} }
 documents: ./src/**/*.{graphql,gql}
 generates:
   ./src/generated/graphqlOperations.ts:
