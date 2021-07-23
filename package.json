@@ -28,6 +28,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
     "@graphql-codegen/cli": "^1.21.7",
+    "@graphql-codegen/introspection": "^1.18.2",
     "@graphql-codegen/typed-document-node": "^1.18.10",
     "@graphql-codegen/typescript": "^1.23.0",
     "@graphql-codegen/typescript-operations": "^1.18.4",
