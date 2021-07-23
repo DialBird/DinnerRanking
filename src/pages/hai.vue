@@ -1,26 +1,27 @@
 <template>
-<div>
-<p>hai</p>
-<li v-for="sup in supers" :key="sup.id">{{ sup.name}}</li>
-</div>
+  <div>
+    <p>hai {{ loading }}</p>
+    <li v-for="sup in result.supers" :key="sup.id">{{ sup.name }}</li>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@nuxtjs/composition-api"
-import gql from 'graphql-tag'
+import { defineComponent } from '@nuxtjs/composition-api'
+import { MyQueryDocument } from '@/generated/graphqlOperations'
+import { useQuery, useQueryLoading } from '@vue/apollo-composable'
 
 export default defineComponent({
-  name: "HaiPage",
-  setup() {},
-  apollo: {
-    supers: gql`
-      query getSupers {
-        supers {
-          id
-          name
-        }
-      }
-    `
+  name: 'HaiPage',
+  setup() {
+    const { result } = useQuery(MyQueryDocument)
+    const loading = useQueryLoading()
+
+    return { loading, result }
+  },
+  data() {
+    return {
+      supers: [],
+    }
   },
 })
 </script>
