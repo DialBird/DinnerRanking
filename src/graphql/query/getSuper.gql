@@ -1,0 +1,6 @@
+query GetSuper($id: Int!) {
+  supers_by_pk(id: $id) {
+    id
+    name
+  }
+}

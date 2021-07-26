@@ -3,7 +3,14 @@
     <p class="text-lg font-bold mb-4">Supers</p>
     <p v-if="loading">loading</p>
     <template v-else>
-      <li v-for="sup in supers" :key="sup.id">{{ sup.id }}: {{ sup.name }}</li>
+      <li v-for="sup in supers" :key="sup.id">
+        <nuxt-link
+          :to="`/supers/${sup.id}`"
+          class="text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          {{ sup.id }}: {{ sup.name }}
+        </nuxt-link>
+      </li>
       <form @submit.prevent="onSubmit">
         <div>
           <label class="block mb-4">New Super</label>
@@ -42,7 +49,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from '@nuxtjs/composition-api'
+import { defineComponent, ref } from '@nuxtjs/composition-api'
 import {
   GetSupersDocument,
   InsertSuperDocument,
