@@ -1,0 +1,6 @@
+query getSupers {
+  supers(order_by: { id: asc }) {
+    id
+    name
+  }
+}

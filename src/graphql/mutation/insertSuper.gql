@@ -1,0 +1,6 @@
+mutation InsertSuper($name: String!) {
+  insert_supers_one(object: { name: $name }) {
+    id
+    name
+  }
+}
