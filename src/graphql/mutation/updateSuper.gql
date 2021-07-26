@@ -1,0 +1,8 @@
+mutation updateSuper($id: Int!, $name: String!) {
+  update_supers(where: { id: { _eq: $id } }, _set: { name: $name }) {
+    affected_rows
+    returning {
+      name
+    }
+  }
+}
